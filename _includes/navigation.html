@@ -1,17 +1,32 @@
-{% for room in site.room %}
-  <h2>{{room.title}}</h2>
-  {% assign room_id = room.id | replace: '/room/', '' %}
-  <h2>{{id}}</h2>
-  <ul class="nav nav-pills flex-column">
+<ul class="nav nav-pills flex-column">
+  {% for room in site.room %}
+    <li
+      class="nav-item potentially-hidden"
+      data-hidden-at-start="{{ room.hidden_at_start }}"
+      data-url="{{ room.url }}"
+    >
+      <a class="nav-link {% if page.url == room.url %}active{% endif %} main-room"
+        href="{{room.url}}"
+      >
+        {{room.title}}
+      </a>
+    </li>
+
+    {% assign room_id = room.id | replace: '/room/', '' %}
     {% assign nav_elems = site.pages | where: 'room', room_id %}
+
     {% for nav_elem in nav_elems %}
-      <li class="nav-item">
+      <li
+        class="nav-item potentially-hidden"
+        data-hidden-at-start="{{ nav_elem.hidden_at_start }}"
+        data-url="{{ nav_elem.url }}"
+      >
         <a class="nav-link {% if page.url == nav_elem.url %}active{% endif %}"
           href="{{nav_elem.url}}"
         >
           {{nav_elem.title}}
         </a>
       </li>
+    {% endfor %}
   {% endfor %}
-  </ul>
-{% endfor %}
+</ul>

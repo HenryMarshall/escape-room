@@ -54,10 +54,12 @@ defaults:
       path: "locations/room_1"
     values:
       room: "room_1"
+      hidden_at_start: false
   - scope:
       path: "locations/room_2"
     values:
       room: "room_2"
+      hidden_at_start: true
 
   - scope:
       path: "_room"

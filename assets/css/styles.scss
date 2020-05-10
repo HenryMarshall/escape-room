@@ -9,6 +9,10 @@ body > .container {
   padding-top: 72px
 }
 
+.main-room {
+  font-size: 2em
+}
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -21,7 +25,7 @@ body > .container {
   padding: 10px 0;
 }
 
-#inventory > .btn {
+.potentially-hidden {
   display: none;
 }
 

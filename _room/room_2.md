@@ -1,6 +1,6 @@
 ---
 title: Another Room
-hidden: true
+hidden_at_start: true
 id: room_2
 ---
 

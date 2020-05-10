@@ -1,7 +1,7 @@
+let gameState = null
+
 $(document).ready(function() {
   console.log("Let's get started")
-
-  let gameState = null
 
   loadOrCreateGame()
   setVisibility()
@@ -31,13 +31,8 @@ $(document).ready(function() {
   }
 
   function setVisibility() {
-    setVisibilityItems()
-    setVisibilityRooms()
-  }
-
-  function setVisibilityItems() {
-    $("#inventory > .btn").each(function() {
-      const thisUrl = $(this).attr("data-item")
+    $(".potentially-hidden").each(function() {
+      const thisUrl = $(this).attr("data-url")
       const hiddenAtStart = $(this).attr("data-hidden-at-start") === 'true'
       const isFound = gameState.thingsFound.includes(thisUrl)
 
@@ -49,10 +44,6 @@ $(document).ready(function() {
         $(this).css('display', 'none')
       }
     })
-  }
-
-  function setVisibilityRooms() {
-
   }
 
   function findThing(thing) {
