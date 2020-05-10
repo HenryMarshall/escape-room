@@ -73,7 +73,7 @@ $(document).ready(function() {
   }
 
   function clickItem(event) {
-    const itemClicked = $(event.target).attr("data-item")
+    const itemClicked = $(event.target).attr("data-url")
     const itemRequired = `${exitCondition.item}.html`
 
     if (itemClicked === itemRequired) {

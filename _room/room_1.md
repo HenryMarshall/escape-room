@@ -5,3 +5,5 @@ hidden_at_start: false
 ---
 
 You find yourself in a room
+
+![room](/images/room_1.png)
