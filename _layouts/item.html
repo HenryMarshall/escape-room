@@ -27,8 +27,7 @@
         </div>
 
         <div class="col-9">
-          {% include breadcrumb.html %}
-          
+          <h3>{{page.title}}</h3>
           {{ content }}
 
           {% if page.exit_condition.password %}
@@ -46,9 +45,7 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="row">
-          {% include inventory.html %}
-        </div>
+        {% include inventory.html %}
       </div>
     </footer>
   </body>

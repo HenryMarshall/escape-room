@@ -1,5 +1,0 @@
----
-Title: Datapad in Vent
----
-
-↗←↓→↖

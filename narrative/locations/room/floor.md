@@ -1,4 +1,0 @@
----
----
-
-![quadrants](/assets/quadrants.png)

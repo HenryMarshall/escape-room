@@ -34,6 +34,36 @@ theme: minima
 plugins:
   - jekyll-feed
 
+collections:
+  room:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: "locations"
+    values:
+      layout: "location"
+  - scope:
+      path: "items"
+    values:
+      layout: "item"
+      hidden_at_start: true
+      item: true
+  - scope:
+      path: "locations/room_1"
+    values:
+      room: "room_1"
+  - scope:
+      path: "locations/room_2"
+    values:
+      room: "room_2"
+
+  - scope:
+      path: "_room"
+    values:
+      layout: "location"
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

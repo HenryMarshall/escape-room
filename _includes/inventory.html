@@ -1,0 +1,25 @@
+<div id="inventory">
+  {% assign items = site.pages | where: 'item', true | sort: 'action' %}
+  {% for item in items %}
+
+    {% if item.action %}
+      <button 
+        type="button" 
+        class="btn btn-primary btn-md" data-item="{{ item.url }}"
+        data-hidden-at-start="{{ item.hidden_at_start }}"
+      >
+        {{ item.title }}
+      </button>
+    {% else %}
+      <a
+        role="button"
+        class="btn btn-secondary btn-md"
+        data-item="{{ item.url }}"
+        href="{{ item.url }}"
+        data-hidden-at-start="{{ item.hidden_at_start }}"
+      >
+        {{ item.title }}
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>

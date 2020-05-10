@@ -1,4 +1,17 @@
-<nav>
-  <a href="/">Home</a>
-  <a href="/about.html">About</a>
-</nav>
+{% for room in site.room %}
+  <h2>{{room.title}}</h2>
+  {% assign room_id = room.id | replace: '/room/', '' %}
+  <h2>{{id}}</h2>
+  <ul class="nav nav-pills flex-column">
+    {% assign nav_elems = site.pages | where: 'room', room_id %}
+    {% for nav_elem in nav_elems %}
+      <li class="nav-item">
+        <a class="nav-link {% if page.url == nav_elem.url %}active{% endif %}"
+          href="{{nav_elem.url}}"
+        >
+          {{nav_elem.title}}
+        </a>
+      </li>
+  {% endfor %}
+  </ul>
+{% endfor %}
