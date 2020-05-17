@@ -1,3 +1,6 @@
+---
+---
+
 let gameState = null
 
 $(document).ready(function() {
@@ -105,7 +108,7 @@ $(document).ready(function() {
   }
 
   function redirectToSolution() {
-    const destination = exitCondition.destination || `./${exitCondition.unlocks}.html`
+    const destination = exitCondition.destination || `./{{ site.baseurl }}${exitCondition.unlocks}.html`
     window.location.replace(destination)
   }
 })
