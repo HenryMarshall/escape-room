@@ -88,14 +88,19 @@ $(document).ready(function() {
 
   function clickItem(event) {
     const itemClicked = $(event.target).attr("data-id")
-    const itemRequired = exitCondition.item
 
-    if (itemClicked === itemRequired) {
-      findThing()
-      redirectToSolution()
+    if (typeof exitCondition === 'undefined') {
+      alert("That didn't seem to do anything")
     }
     else {
-      alert("That didn't seem to do anything")
+      const itemRequired = exitCondition.item
+      if (itemClicked === itemRequired) {
+        findThing()
+        redirectToSolution()
+      }
+      else {
+        alert("That didn't seem to do anything")
+      }
     }
   }
 

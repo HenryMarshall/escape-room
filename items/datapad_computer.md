@@ -1,7 +1,7 @@
 ---
 title: "Datapad (Computer)"
 visible_if_unlocked: "datapad_computer"
-action: false
+action: 0
 ---
 
 * First Number: 5

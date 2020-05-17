@@ -2,7 +2,7 @@
   {% assign items = site.pages | where: 'item', true | sort: 'action' %}
   {% for item in items %}
 
-    {% if item.action %}
+    {% if item.action == 1 %}
       <button 
         type="button" 
         class="btn btn-primary btn-md potentially-hidden"
