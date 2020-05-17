@@ -4,8 +4,10 @@ $(document).ready(function() {
   console.log("Let's get started")
 
   loadOrCreateGame()
-  setVisibility()
-  $("#restart").click(setupGame)
+  $("#restart").click(function() {
+    setupGame()
+    location.reload()
+  })
   $("#guess-password").submit(guessPassword)
   $("#inventory > button").click(clickItem)
 
@@ -18,6 +20,8 @@ $(document).ready(function() {
     else {
       setupGame()
     }
+    setVisibility()
+    console.log(gameState)
   }
 
   function setupGame() {
@@ -27,16 +31,14 @@ $(document).ready(function() {
     }
     gameState = Object.assign({}, newGameState)
     sessionStorage.setItem('gameState', JSON.stringify(newGameState))
-    setVisibility()
   }
 
   function setVisibility() {
     $(".potentially-hidden").each(function() {
-      const thisUrl = $(this).attr("data-url")
-      const hiddenAtStart = $(this).attr("data-hidden-at-start") === 'true'
-      const isFound = gameState.thingsFound.includes(thisUrl)
+      const visibleIfUnlocked = $(this).attr("data-visible-if-unlocked")
+      const isFound = gameState.thingsFound.includes(visibleIfUnlocked)
 
-      if (!hiddenAtStart || isFound) {
+      if (!visibleIfUnlocked || isFound) {
         $(this).css('display', 'inline-block')
       }
       else {
@@ -46,9 +48,20 @@ $(document).ready(function() {
     })
   }
 
-  function findThing(thing) {
-    gameState.thingsFound.push(thing)
-    sessionStorage.setItem('gameState', JSON.stringify(gameState))
+  function findThing() {
+    const thing = exitCondition.unlocks
+
+    if (!thing) {
+      alert("Fatal Error: Missing `exitCondition.unlocks`")
+    }
+
+    if (gameState.thingsFound.includes(thing)) {
+      alert("You already found that thing")
+    }
+    else {
+      gameState.thingsFound.push(thing)
+      sessionStorage.setItem('gameState', JSON.stringify(gameState))
+    }
   }
 
   function guessPassword(event) {
@@ -57,13 +70,14 @@ $(document).ready(function() {
     const correctPassword = exitCondition.password.toLowerCase()
 
     if (!correctPassword) {
-      alert("Fatal Error: Missing `exit_condition.password`")
+      alert("Fatal Error: Missing `exitCondition.password`")
       return
     }
 
     const $password = $("#password")
     const guess = $password.val()
     if (guess.toLowerCase() === correctPassword) {
+      findThing()
       redirectToSolution()
     }
     else {
@@ -73,10 +87,11 @@ $(document).ready(function() {
   }
 
   function clickItem(event) {
-    const itemClicked = $(event.target).attr("data-url")
-    const itemRequired = `${exitCondition.item}.html`
+    const itemClicked = $(event.target).attr("data-id")
+    const itemRequired = exitCondition.item
 
     if (itemClicked === itemRequired) {
+      findThing()
       redirectToSolution()
     }
     else {
@@ -85,15 +100,7 @@ $(document).ready(function() {
   }
 
   function redirectToSolution() {
-    const destination = exitCondition.destination
-
-    if (!destination) {
-      alert("Fatal Error: Missing `exit_condition.destination`")
-      return
-    }
-
-    const url = `${destination}.html`
-    findThing(url)
-    window.location.replace(url)
+    const destination = exitCondition.destination || `./${exitCondition.unlocks}.html`
+    window.location.replace(destination)
   }
 })

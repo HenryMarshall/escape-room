@@ -1,9 +1,10 @@
 ---
-title: Computer (Right)
+title: "Computer (Right)"
 exit_condition:
   password: "1079813"
-  destination: "/items/datapad_computer"
-note_to_self: "neon, gold, oxygen, aluminum"
+  unlocks: "datapad_computer"
+  destination: "../../items/datapad_computer.html"
+note_to_self: "neon (10), gold (79), oxygen (8), aluminum (13)"
 ---
 
 ![table](/images/blank_periodic_table.png)

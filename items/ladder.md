@@ -1,5 +1,7 @@
 ---
-title: Ladder
+title: "Ladder"
+id: "ladder"
+visible_if_unlocked: "ladder"
 action: true
 ---
 

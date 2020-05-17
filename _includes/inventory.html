@@ -7,7 +7,11 @@
         type="button" 
         class="btn btn-primary btn-md potentially-hidden"
         data-url="{{ item.url }}"
-        data-hidden-at-start="{{ item.hidden_at_start }}"
+        data-id="{{ item.id }}"
+        {% if item.visible_if_unlocked %}
+          data-visible-if-unlocked="{{ item.visible_if_unlocked }}"
+          style="display:none;"
+        {% endif %}
       >
         {{ item.title }}
       </button>
@@ -17,7 +21,10 @@
         class="btn btn-secondary btn-md potentially-hidden"
         data-url="{{ item.url }}"
         href="{{ item.url }}"
-        data-hidden-at-start="{{ item.hidden_at_start }}"
+        {% if item.visible_if_unlocked %}
+          data-visible-if-unlocked="{{ item.visible_if_unlocked }}"
+          style="display:none;"
+        {% endif %}
       >
         {{ item.title }}
       </a>

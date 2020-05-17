@@ -1,8 +1,8 @@
 ---
-title: Alcove (Right)
+title: "Alcove (Right)"
 exit_condition:
   password: "412299"
-  destination: "/locations/room_1/bed"
+  unlocks: "bed"
 ---
 
 ![biographic events](/images/biographic_events.png)

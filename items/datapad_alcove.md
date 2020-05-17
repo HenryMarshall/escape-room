@@ -1,5 +1,6 @@
 ---
-title: Datapad (Alcove)
+title: "Datapad (Alcove)"
+visible_if_unlocked: "datapad_alcove"
 action: false
 ---
 

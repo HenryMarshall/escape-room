@@ -1,5 +1,5 @@
 ---
-title: Wall
+title: "Wall"
 ---
 
 | Iron     | 1st |

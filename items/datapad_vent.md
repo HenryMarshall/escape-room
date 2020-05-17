@@ -1,5 +1,6 @@
 ---
-title: Datapad in Vent
+title: "Datapad (Vent)"
+visible_if_unlocked: "datapad_vent"
 action: false
 ---
 

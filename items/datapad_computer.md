@@ -1,5 +1,6 @@
 ---
-title: Datapad Ejected from Computer
+title: "Datapad (Computer)"
+visible_if_unlocked: "datapad_computer"
 action: false
 ---
 

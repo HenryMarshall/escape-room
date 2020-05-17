@@ -1,7 +1,6 @@
 ---
-title: Main Room
-id: room_1
-hidden_at_start: false
+title: "Main Room"
+location_folder: "room_1"
 ---
 
 You find yourself in a room

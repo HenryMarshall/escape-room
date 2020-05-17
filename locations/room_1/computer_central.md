@@ -1,8 +1,9 @@
 ---
-title: Computer (Central)
+title: "Computer (Central)"
 exit_condition:
   password: "bddabbca"
-  destination: "/items/ladder"
+  unlocks: "ladder"
+  destination: "../../items/ladder.html"
 ---
 
 ![hidden objects](/images/hidden_objects.png)

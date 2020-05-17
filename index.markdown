@@ -4,3 +4,5 @@
 
 layout: home
 ---
+
+[Get Started](./room/room_1.html)

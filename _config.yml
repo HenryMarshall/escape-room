@@ -48,18 +48,16 @@ defaults:
       path: "items"
     values:
       layout: "item"
-      hidden_at_start: true
       item: true
   - scope:
       path: "locations/room_1"
     values:
       room: "room_1"
-      hidden_at_start: false
   - scope:
       path: "locations/room_2"
     values:
       room: "room_2"
-      hidden_at_start: true
+      visible_if_unlocked: "room_2"
 
   - scope:
       path: "_room"

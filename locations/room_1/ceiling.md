@@ -1,8 +1,9 @@
 ---
-title: Ceiling
+title: "Ceiling"
 exit_condition:
-  item: "/items/ladder"
-  destination: "/items/datapad_vent"
+  item: "ladder"
+  unlocks: "datapad_vent"
+  destination: "../../items/datapad_vent.html"
 ---
 
 It's a blank ceiling
