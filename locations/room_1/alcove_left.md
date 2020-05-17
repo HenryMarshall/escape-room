@@ -8,4 +8,4 @@ exit_condition:
 
 You notice that on the back of each box there is a hidden image
 
-![structures](/images/structures.png)
+![structures]({{ site.baseurl }}/images/structures.png)

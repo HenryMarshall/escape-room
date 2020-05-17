@@ -2,4 +2,4 @@
 title: "Floor"
 ---
 
-![quadrants](/images/quadrants.png)
+![quadrants]({{ site.baseurl }}/images/quadrants.png)

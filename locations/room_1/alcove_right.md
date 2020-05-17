@@ -5,4 +5,4 @@ exit_condition:
   unlocks: "bed"
 ---
 
-![biographic events](/images/biographic_events.png)
+![biographic events]({{ site.baseurl }}/images/biographic_events.png)

@@ -6,4 +6,4 @@ exit_condition:
   destination: "../../items/ladder.html"
 ---
 
-![hidden objects](/images/hidden_objects.png)
+![hidden objects]({{ site.baseurl }}/images/hidden_objects.png)

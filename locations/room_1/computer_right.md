@@ -7,4 +7,4 @@ exit_condition:
 note_to_self: "neon (10), gold (79), oxygen (8), aluminum (13)"
 ---
 
-![table](/images/blank_periodic_table.png)
+![table]({{ site.baseurl }}/images/blank_periodic_table.png)
