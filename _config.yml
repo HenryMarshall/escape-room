@@ -23,7 +23,7 @@ email: henry@isagoddamn.ninja
 description: >- # this means to ignore newlines until "baseurl:"
   A static-site based escape room for you and your friends
 baseurl: "/escape-room" # the subpath of your site, e.g. /blog
-url: "henrymarshall.github.io/escape-room"
+url: "henrymarshall.github.io"
 twitter_username: jekyllrb
 github_username:  henrymarshall
 

@@ -4,7 +4,7 @@
       {% assign current_room_id = page.room | replace_first: '', '/room/' %}
       {% assign current_room = site.room | where: 'id', current_room_id | first %}
       <li class="breadcrumb-item">
-        <a href="{{current_room.url}}">{{current_room.title}}</a>
+        <a href="{{ current_room.url }}">{{ current_room.title }}</a>
       </li>
     {% endif %}
     <li class="breadcrumb-item active">{{page.title}}</li>

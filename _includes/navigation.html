@@ -2,14 +2,14 @@
   {% for room in site.room %}
     <li
       class="nav-item potentially-hidden"
-      data-url="{{ site.baseurl }}/{{ room.url }}"
+      data-url="{{ room.url | prepend: site.baseurl }}"
       {% if room.visible_if_unlocked %}
         data-visible-if-unlocked="{{ room.visible_if_unlocked }}"
         style="display:none;"
       {% endif %}
     >
       <a class="nav-link {% if page.url == room.url %}active{% endif %} main-room"
-        href="{{ site.baseurl }}/{{room.url}}"
+        href="{{ room.url | prepend: site.baseurl }}"
       >
         {{room.title}}
       </a>
@@ -21,14 +21,14 @@
     {% for nav_elem in nav_elems %}
       <li
         class="nav-item potentially-hidden"
-        data-url="{{ site.baseurl }}/{{ nav_elem.url }}"
+        data-url="{{ nav_elem.url | prepend: site.baseurl }}"
         {% if nav_elem.visible_if_unlocked %}
           data-visible-if-unlocked="{{ nav_elem.visible_if_unlocked }}"
           style="display:none;"
         {% endif %}
       >
         <a class="nav-link {% if page.url == nav_elem.url %}active{% endif %}"
-          href="{{ site.baseurl }}/{{nav_elem.url}}"
+          href="{{ nav_elem.url | prepend: site.baseurl }}"
         >
           {{nav_elem.title}}
         </a>
