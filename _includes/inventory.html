@@ -6,11 +6,13 @@
       <button 
         type="button" 
         class="btn btn-primary btn-md potentially-hidden"
-        data-url="{{ item.url | prepend: site.baseurl }}"
         data-id="{{ item.id }}"
         {% if item.visible_if_unlocked %}
           data-visible-if-unlocked="{{ item.visible_if_unlocked }}"
           style="display:none;"
+        {% endif %}
+        {% if item.hidden_if_unlocked %}
+          data-hidden-if-unlocked="{{ item.hidden_if_unlocked }}"
         {% endif %}
       >
         {{ item.title }}
@@ -19,11 +21,13 @@
       <a
         role="button"
         class="btn btn-secondary btn-md potentially-hidden"
-        data-url="{{ item.url | prepend: site.baseurl }}"
         href="{{ item.url | prepend: site.baseurl }}"
         {% if item.visible_if_unlocked %}
           data-visible-if-unlocked="{{ item.visible_if_unlocked }}"
           style="display:none;"
+        {% endif %}
+        {% if item.hidden_if_unlocked %}
+          data-hidden-if-unlocked="{{ item.hidden_if_unlocked }}"
         {% endif %}
       >
         {{ item.title }}

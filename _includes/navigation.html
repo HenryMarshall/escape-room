@@ -2,10 +2,14 @@
   {% for room in site.room %}
     <li
       class="nav-item potentially-hidden"
-      data-url="{{ room.url | prepend: site.baseurl }}"
       {% if room.visible_if_unlocked %}
         data-visible-if-unlocked="{{ room.visible_if_unlocked }}"
         style="display:none;"
+      {% endif %}
+      {% if room.hidden_if_unlocked %}
+        data-hidden-if-unlocked="{{ room.hidden_if_unlocked }}"
+      {% elsif room.exit_condition %}
+        data-hidden-if-unlocked="{{ room.exit_condition.unlocks }}"
       {% endif %}
     >
       <a class="nav-link {% if page.url == room.url %}active{% endif %} main-room"
@@ -21,10 +25,14 @@
     {% for nav_elem in nav_elems %}
       <li
         class="nav-item potentially-hidden"
-        data-url="{{ nav_elem.url | prepend: site.baseurl }}"
         {% if nav_elem.visible_if_unlocked %}
           data-visible-if-unlocked="{{ nav_elem.visible_if_unlocked }}"
           style="display:none;"
+        {% endif %}
+        {% if nav_elem.hidden_if_unlocked %}
+          data-hidden-if-unlocked="{{ nav_elem.hidden_if_unlocked }}"
+        {% elsif nav_elem.exit_condition %}
+          data-hidden-if-unlocked="{{ nav_elem.exit_condition.unlocks }}"
         {% endif %}
       >
         <a class="nav-link {% if page.url == nav_elem.url %}active{% endif %}"

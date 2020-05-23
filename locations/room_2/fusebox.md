@@ -1,5 +1,5 @@
 ---
-title: Wires
+title: Fusebox
 exit_condition:
   password: "glazes"
   unlocks: "fusebox_open"

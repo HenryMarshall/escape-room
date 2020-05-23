@@ -1,5 +1,6 @@
 ---
 title: "Wall"
+hidden_if_unlocked: "ladder"
 ---
 
 | Iron     | 1st |

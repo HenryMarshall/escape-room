@@ -1,6 +1,7 @@
 ---
 title: "Main Room"
 location_folder: "room_1"
+hidden_if_unlocked: "room_2"
 ---
 
 You find yourself in a room

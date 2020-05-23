@@ -36,9 +36,14 @@ $(document).ready(function() {
   function setVisibility() {
     $(".potentially-hidden").each(function() {
       const visibleIfUnlocked = $(this).attr("data-visible-if-unlocked")
-      const isFound = gameState.thingsFound.includes(visibleIfUnlocked)
+      const visibleAtStart = !visibleIfUnlocked
+      const isDiscovered = gameState.thingsFound.includes(visibleIfUnlocked)
 
-      if (!visibleIfUnlocked || isFound) {
+      const hiddenIfUnlocked = $(this).attr("data-hidden-if-unlocked")
+      const isExplicitlyHidden = gameState.thingsFound.includes(hiddenIfUnlocked)
+
+      // If `visibleIfUnlocked` is not set, it is visible by default
+      if (!isExplicitlyHidden && (visibleAtStart || isDiscovered)) {
         $(this).css('display', 'inline-block')
       }
       else {
