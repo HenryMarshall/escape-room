@@ -1,9 +1,8 @@
 ---
-title: "Main Room"
+title: "Ambassador's Office"
 location_folder: "room_1"
-hidden_if_unlocked: "room_2"
 ---
 
-You find yourself in a room
+You look around the lushly appointed ambassador's office.
 
-![room]({{ site.baseurl }}/images/room_1.png)
+![room]({{ site.baseurl }}/images/room_1.jpg)
